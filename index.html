@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Pribadi</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f4f4f4;
+margin:0;
+padding:0;
+}
+
+.container{
+width:80%;
+margin:auto;
+text-align:center;
+padding:20px;
+}
+
+h1{
+color:#333;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:20px 0;
+border-radius:10px;
+box-shadow:0 4px 8px rgba(0,0,0,0.1);
+}
+
+.foto{
+width:150px;
+height:150px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:15px;
+}
+
+ul{
+list-style:none;
+padding:0;
+}
+
+li{
+background:#eaeaea;
+margin:5px;
+padding:10px;
+border-radius:5px;
+}
+
+footer{
+margin-top:20px;
+color:#777;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Website Pribadi</h1>
+
+<div class="card">
+
+<img src="Screenshot(68),png" class="foto">
+<img src="Screenshot(58),png" class="foto">
+<img src="Screenshot(59),png" class="foto">
+<img src="Screenshot(66),png" class="foto">
+<img src="Screenshot(67),png" class="foto">
+<img src="Screenshot(70),png" class="foto">
+<img src="Screenshot(71),png" class="foto">
+
+<h2>Biodata</h2>
+
+<p><b>Nama:</b> Nama Kamu</p>
+<p><b>Tempat, Tanggal Lahir:</b> Bandung, <span id="ttl">2005-01-10</span></p>
+<p><b>Umur:</b> <span id="umur"></span> tahun</p>
+<p><b>Sekolah/Kampus:</b> Isi Sekolah</p>
+<p><b>Jurusan:</b> Isi Jurusan</p>
+<p><b>Email:</b> email@gmail.com</p>
+
+</div>
+
+<div class="card">
+
+<h2>Tugas Saya</h2>
+
+<ul>
+<li>Tugas 1 - HTML</li>
+<li>Tugas 2 - CSS</li>
+<li>Tugas 3 - JavaScript</li>
+</ul>
+
+</div>
+
+<footer>
+<p>© 2026 Website Pribadi</p>
+</footer>
+
+</div>
+
+<script>
+
+function hitungUmur(){
+
+let tanggalLahir = new Date(document.getElementById("ttl").innerText);
+let hariIni = new Date();
+
+let umur = hariIni.getFullYear() - tanggalLahir.getFullYear();
+let bulan = hariIni.getMonth() - tanggalLahir.getMonth();
+
+if (bulan < 0 || (bulan === 0 && hariIni.getDate() < tanggalLahir.getDate())){
+umur--;
+}
+
+document.getElementById("umur").innerText = umur;
+
+}
+
+hitungUmur();
+
+</script>
+
+</body>
+</html>
